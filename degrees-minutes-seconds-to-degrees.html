@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Degré : Minute : Seconde vers décimal</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.jpg" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/lib/leaflet/leaflet.css" />
+  <script src="assets/lib/leaflet/leaflet.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">HK-Géomatique</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html#accueil">Accueil</a></li>
+          <li class="dropdown"><a href="#" class="active"><span>Outils</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <!-- <li><a href="outil1.html" class="active">Transformation Conform 2D</a></li> -->
+              <li><a href="#">Degré : Minute : Seconde vers décimal</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="index.html#intro">Introduction</a></li>
+          <li><a class="nav-link scrollto" href="index.html#carto">Cartographie</a></li>
+          <li><a class="nav-link scrollto" href="index.html#services">Données SIG</a></li>
+          <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li><b>Outils</b></li>
+        </ol>
+        <h2>Degré : Minute : Seconde vers décimalf</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+        <p>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="section-title2">
+              <h2>Degré : Minute : Seconde</h2>
+            </div>
+            <label for="exampleDataList" class="form-label">Longitude</label>
+            <div class="input-group mb-3">
+              <input id="long_d" type="number" class="form-control dms" placeholder="Degré" aria-label="Degré" min="-90"
+                max="180">
+              <span class="input-group-text">°</span>
+              <input id="long_m" type="number" class="form-control dms" placeholder="Minute" aria-label="Minute" min="0"
+                max="60">
+              <span class="input-group-text">'</span>
+              <input id="long_s" type="number" class="form-control dms" placeholder="Seconde" aria-label="Seconde"
+                min="0" max="60" step="0.001">
+              <span class="input-group-text">"</span>
+            </div>
+            <label for="exampleDataList" class="form-label">Latitude</label>
+            <div class="input-group mb-3">
+              <input id="lat_d" type="number" class="form-control dms" placeholder="Degré" aria-label="Degré" min="-90"
+                max="90">
+              <span class="input-group-text">°</span>
+              <input id="lat_m" type="number" class="form-control dms" placeholder="Minute" aria-label="Minute" min="0"
+                max="60">
+              <span class="input-group-text">'</span>
+              <input id="lat_s" type="number" class="form-control dms" placeholder="Seconde" aria-label="Seconde"
+                min="0" max="60" step="0.001">
+              <span class="input-group-text">"</span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="section-title2">
+              <h2>Degré décimal</h2>
+            </div>
+            <label for="exampleDataList" class="form-label">Longitude</label>
+            <div class="input-group mb-3">
+              <input id="long_dd" type="number" class="form-control dd" placeholder="Degré" aria-label="Degré"
+                min="-180" max="180" step="0.000001">
+              <span class="input-group-text">°</span>
+            </div>
+            <label for="exampleDataList" class="form-label">Latitude</label>
+            <div class="input-group mb-3">
+              <input id="lat_dd" type="number" class="form-control dd" placeholder="Degré" aria-label="Degré" min="-90"
+                max="90" step="0.000001">
+              <span class="input-group-text">°</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div id="map" style="width: 100%;height: 500px;margin-bottom: 30px;"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+              <h2>Comment convertir des degrés, minutes, secondes en degrés décimaux</h2>
+            </div>
+
+            <div class="row content">
+              <div class="col-lg">
+                <div class="section-title2">
+                  <h2>- Un degré est égal à 60 minutes et égal à 3600 secondes :</h2>
+                </div>
+                <p class="pp">
+                  <b>1° = 60' = 3600"</b>
+                </p>
+                <div class="section-title2">
+                  <h2>- Une minute est égale à 1/60 degrés :</h2>
+                </div>
+                <p class="pp">
+                  <b>1' = (1/60)° = 0,01666667°</b>
+                </p>
+                <div class="section-title2">
+                  <h2>- Une seconde est égale à 1/3600 degrés :</h2>
+                </div>
+                <p class="pp">
+                  <b>1" = (1/3600)° = 2,77778e-4° = 0,000277778°</b>
+                </p>
+                <div class="section-title2">
+                  <h2>- Pour un angle avec d degrés entiers m minutes et s secondes :
+                  </h2>
+                </div>
+                <p class="pp">
+                  <b> d° m' s"</b>
+                </p>
+                <div class="section-title2">
+                  <h2>- Les degrés décimaux dd est égal à :</h2>
+                </div>
+                <p class="pp">
+                  <b>dd = d + m/60 + s/3600</b>
+                </p>
+
+              </div>
+            </div>
+
+            <div class="section-title">
+              <h2>Example</h2>
+            </div>
+            <div class="row content">
+              <div class="col-lg">
+                <div class="section-title2">
+                  <h2>
+                    - Convertissez un angle de 30 degrés 15 minutes et 50 secondes en degrés décimaux :</h2>
+                </div>
+                <p  class="pp">
+                  <b>30° 15' 50"</b>
+                </p>
+                <div class="section-title2">
+                  <h2>- Les degrés décimaux dd est égal à :</h2>
+                </div>
+                <p class="pp">
+                  <b>dd = d + m/60 + s/3600 = 30° + 15'/60 + 50"/3600 = 30,263888889°</b>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        </p>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>HK-Géomatique</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+
+
+    // input elements declaration
+    let long_d = document.querySelector('#long_d');
+    let long_m = document.querySelector('#long_m');
+    let long_s = document.querySelector('#long_s');
+
+    let lat_d = document.querySelector('#lat_d');
+    let lat_m = document.querySelector('#lat_m');
+    let lat_s = document.querySelector('#lat_s');
+
+    let long_dd = document.querySelector('#long_dd');
+    let lat_dd = document.querySelector('#lat_dd');
+
+    let dms = document.querySelectorAll('.dms');
+    dms.forEach((item) => {
+      item.addEventListener("keyup", dmsFunction)
+      item.addEventListener("change", dmsFunction)
+    });
+    function dmsFunction() {
+      let longitude = long_d.value * 1 + (long_m.value / 60) + (long_s.value / 60) / 60;
+      long_dd.value = Math.round((longitude + Number.EPSILON) * 1000000) / 1000000;
+
+      let latitude = lat_d.value * 1 + (lat_m.value / 60) + (lat_s.value / 60) / 60;
+      lat_dd.value = Math.round((latitude + Number.EPSILON) * 1000000) / 1000000;
+
+      mapFunction(latitude, longitude)
+    }
+    ////////////////////////////////////////////////////////////////
+    let dd = document.querySelectorAll('.dd');
+    dd.forEach((item) => {
+      item.addEventListener("keyup", ddFunction)
+      item.addEventListener("change", ddFunction)
+    });
+
+
+    function ddToDms(long_dd, lat_dd) {
+      let long_d = Math.trunc(long_dd * 1);
+      let long_m = Math.trunc((long_dd * 1 - long_d * 1) * 60);
+      let long_s = (((long_dd * 1 - long_d * 1) * 60) - long_m * 1) * 60;
+      long_s = Math.round((long_s * 1 + Number.EPSILON) * 1000) / 1000;
+
+      let lat_d = Math.trunc(lat_dd * 1);
+      let lat_m = Math.trunc((lat_dd * 1 - lat_d * 1) * 60);
+      let lat_s = (((lat_dd * 1 - lat_d * 1) * 60) - lat_m * 1) * 60;
+      lat_s = Math.round((lat_s * 1 + Number.EPSILON) * 1000) / 1000;
+      return [long_d, long_m, long_s, lat_d, lat_m, lat_s]
+    }
+    function ddFunction() {
+      let res = ddToDms(long_dd.value, lat_dd.value);
+
+      long_d.value = res[0];
+      long_m.value = res[1];
+      long_s.value = res[2];
+
+      lat_d.value = res[3];
+      lat_m.value = res[4];
+      lat_s.value = res[5];
+
+      mapFunction(lat_dd.value, long_dd.value)
+    }
+
+    var map = L.map('map').setView([0, 0], 3);
+    // map.scrollWheelZoom.disable();
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    let m;
+    let c;
+    map.locate({ setView: true, maxZoom: 16 });
+
+    function onLocationFound(e) {
+      var radius = e.accuracy;
+
+      m = L.marker(e.latlng).addTo(map)
+        .bindPopup("Vous êtes dans un rayon de " + radius + " meters de ce point").openPopup();
+
+      c = L.circle(e.latlng, radius).addTo(map);
+
+      lat_dd.value = Math.round((e.latlng.lat * 1 + Number.EPSILON) * 1000000) / 1000000;
+      long_dd.value = Math.round((e.latlng.lng * 1 + Number.EPSILON) * 1000000) / 1000000;
+
+      let res = ddToDms(long_dd.value, lat_dd.value);
+      long_d.value = res[0];
+      long_m.value = res[1];
+      long_s.value = res[2];
+
+      lat_d.value = res[3];
+      lat_m.value = res[4];
+      lat_s.value = res[5];
+
+    }
+
+    map.on('click', onClick);
+
+    function onClick(e) {
+      lat_dd.value = Math.round((e.latlng.lat * 1 + Number.EPSILON) * 1000000) / 1000000;
+      long_dd.value = Math.round((e.latlng.lng * 1 + Number.EPSILON) * 1000000) / 1000000;
+      ddFunction();
+    }
+    map.on('locationfound', onLocationFound);
+
+    function onLocationError(e) {
+      alert(e.message);
+    }
+
+    map.on('locationerror', onLocationError);
+
+    function mapFunction(lat, long) {
+      if (m) map.removeLayer(m)
+      if (c) map.removeLayer(c)
+      m = L.marker([lat, long]).addTo(map)
+        .bindPopup('Coordonnées localisé sur la carte')
+        .openPopup();
+
+    }
+  </script>
+</body>
+
+</html>
